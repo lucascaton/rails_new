@@ -1,19 +1,13 @@
 h1. About
 
-This project helps to create Rails applications using some templates.
-
-h1. Installation
-
-You will need the thor gem:
-<pre><code>$ gem install thor</code></pre>
+This is a template for Rails applicatinos.
 
 h1. Usage
 
-<pre><code>$ thor rails_templates:default ~/projects/new_project</code></pre>
+<pre><code>$ rails new project_name --skip-bundle -m caton_template.rb</code></pre>
 
-You can use any options from `rails new` command (see: `rails new --help`).
-For example, in order to select the PostgreSQL database:
-<pre><code>$ thor rails_templates:default ~/projects/new_project -d postgresql</code></pre>
+In order to see more options, run:
+<pre><code>$ rails new --help</code></pre>
 
 h1. Contributing to Lucas Caton
 
