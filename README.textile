@@ -4,7 +4,7 @@ This is a template for Rails applications.
 
 h1. Usage
 
-<pre><code>$ rails new project_name --skip-bundle -m caton_template.rb</code></pre>
+<pre><code>$ rails new project_name --skip-bundle -m lucascaton_template.rb</code></pre>
 
 In order to see more options, run:
 <pre><code>$ rails new --help</code></pre>
