@@ -11,6 +11,10 @@ h1. Usage
 
 <pre><code>$ thor rails_templates:default ~/projects/new_project</code></pre>
 
+You can use any options from `rails new` command (see: `rails new --help`).
+For example, in order to select the PostgreSQL database:
+<pre><code>$ thor rails_templates:default ~/projects/new_project -d postgresql</code></pre>
+
 h1. Contributing to Lucas Caton
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
