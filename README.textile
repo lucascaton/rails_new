@@ -1,6 +1,6 @@
 h1. About
 
-This is a template for Rails applicatinos.
+This is a template for Rails applications.
 
 h1. Usage
 
