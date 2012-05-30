@@ -11,7 +11,7 @@ create_file 'app/assets/images/.gitkeep'
 remove_file 'app/assets/images/rails.png'
 remove_dir 'test'
 
-# Copying teample files
+# Copying templates files
 copy_file 'Gemfile', 'Gemfile', :force => true
 
 # Gemfile's dependencies verification
