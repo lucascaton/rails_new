@@ -12,6 +12,7 @@ remove_file 'app/assets/images/rails.png'
 
 # Copying templates files
 copy_file 'Gemfile', 'Gemfile', :force => true
+copy_file 'gitignore', '.gitignore', :force => true
 
 # Gemfile's dependencies verification
 system 'bundle install'
