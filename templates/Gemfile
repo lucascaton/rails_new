@@ -5,7 +5,7 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'json'
 gem 'pg'
-gem 'rails', '3.2.5'
+gem 'rails', '3.2.6'
 gem 'thin'
 
 group :development do
@@ -25,8 +25,8 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'forgery'
-  gem 'simplecov', :require => false
   gem 'shoulda-matchers'
+  gem 'simplecov', :require => false
 end
 
 group :assets do
