@@ -9,7 +9,6 @@ end
 remove_file 'public/index.html'
 create_file 'app/assets/images/.gitkeep'
 remove_file 'app/assets/images/rails.png'
-remove_dir 'test'
 
 # Copying templates files
 copy_file 'Gemfile', 'Gemfile', :force => true
