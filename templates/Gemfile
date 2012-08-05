@@ -1,21 +1,17 @@
 source 'https://rubygems.org'
 
-gem 'awesome_print'
 gem 'haml'
 gem 'jquery-rails'
-gem 'json'
 gem 'pg'
 gem 'rails', '3.2.7'
 gem 'thin'
 
 group :development do
-  gem 'hpricot'
-  gem 'ruby_parser'
-  gem 'silent-postgres'
 end
 
 group :development, :test do
   gem 'pry'
+  gem 'awesome_print'
 end
 
 group :test do
@@ -25,7 +21,6 @@ group :test do
   gem 'forgery'
   gem 'poltergeist'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
   gem 'simplecov', :require => false
 end
 
