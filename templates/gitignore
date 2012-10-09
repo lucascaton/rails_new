@@ -25,7 +25,7 @@
 /public/packages/*
 /public/system/*
 
-# Ignore files from text editor and IDEs
+# Ignore files from text editors and IDEs
 Session.vim
 *.sw?
 
