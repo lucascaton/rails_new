@@ -1,8 +1,8 @@
 h1. About
 
-This is a template for Rails applications.
+Templates for Rails applications.
 
-h2. Current Version
+h3. Current Version
 
 Rails 3.2.8
 
