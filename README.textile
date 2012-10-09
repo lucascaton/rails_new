@@ -4,10 +4,11 @@ This is a template for Rails applications.
 
 h1. Usage
 
-<pre><code>$ rails new project_name -d postgresql --skip-bundle --skip-test-unit -m https://raw.github.com/lucascaton/rails_templates/master/default.rb</code></pre>
+<pre><code>git clone git@github.com:lucascaton/rails_templates.git ~/.rails_templates
+rails new project_name -d postgresql --skip-bundle --skip-test-unit -m ~/.rails_templates/default.rb</code></pre>
 
 In order to see more options, run:
-<pre><code>$ rails new --help</code></pre>
+<pre><code>rails new --help</code></pre>
 
 h1. Contributing to Lucas Caton
 
