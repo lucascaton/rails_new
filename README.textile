@@ -2,16 +2,24 @@ h1. About
 
 This is a template for Rails applications.
 
+h2. Current Version
+
+Rails 3.2.8
+
 h1. Installation
 
-<pre><code>git clone git@github.com:lucascaton/rails_templates.git ~/.rails_templates</code></pre>
+<pre><code>git clone git@github.com:lucascaton/rails_templates.git ~/.rails_templates
+echo "alias rails_new='rails new $1 --skip-bundle --skip-test-unit -f postgresql -m ~/.rails_templates/default.rb'" >> ~/.bash_profile</code></pre>
 
 h1. Usage
 
-<pre><code>rails new project_name -d postgresql --skip-bundle --skip-test-unit -m ~/.rails_templates/default.rb</code></pre>
+You can use the default settings:
 
-In order to see more options, run:
-<pre><code>rails new --help</code></pre>
+<pre><code>rails_new project_name # default database: postgresql</code></pre>
+
+Or you can choose your options:
+
+<pre><code>rails_new project_name -d mysql # check all options using `rails new --help`</code></pre>
 
 h1. Contributing to Lucas Caton
 
