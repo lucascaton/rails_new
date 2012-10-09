@@ -1,3 +1,4 @@
+echo
 echo "Starting rails templates installation in ~/.rails_tempaltes..."
 
 git clone git@github.com:lucascaton/rails_templates.git ~/.rails_templates
