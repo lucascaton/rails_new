@@ -8,8 +8,8 @@ Rails 3.2.8
 
 h1. Installation
 
-<pre><code>git clone git@github.com:lucascaton/rails_templates.git ~/.rails_templates
-echo "alias rails_new='_(){ rails new \$1 --skip-bundle --skip-test-unit -f postgresql -m ~/.rails_templates/default.rb; }; _'" >> ~/.bash_profile</code></pre>
+<pre><code>curl -L https://raw.github.com/lucascaton/rails_templates/master/install.sh | bash -s stable</code></pre>
+
 
 h1. Usage
 
