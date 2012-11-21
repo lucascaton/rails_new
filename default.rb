@@ -7,12 +7,11 @@ end
 
 # Removing useless files
 remove_file 'public/index.html'
-create_file 'app/assets/images/.gitkeep'
 remove_file 'app/assets/images/rails.png'
 
 # Copying templates files
-copy_file 'Gemfile', 'Gemfile', :force => true
-copy_file 'gitignore', '.gitignore', :force => true
+copy_file 'Gemfile', 'Gemfile', force: true
+copy_file 'gitignore', '.gitignore', force: true
 
 # Gemfile's dependencies verification
 system 'bundle install'
