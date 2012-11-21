@@ -14,9 +14,6 @@
 # Ignore config files
 /config/database.yml
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-
 # Ignore docs
 /doc/api
 /doc/app
@@ -41,9 +38,6 @@ Session.vim
 
 # Ignore files from SASS
 /.sass-cache/
-
-# Ignore files from Capybara
-/capybara-*
 
 # Ignore routes cache
 /.routes
