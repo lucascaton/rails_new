@@ -4,12 +4,11 @@ Templates for Rails applications.
 
 h3. Current Version
 
-Rails 3.2.8
+Rails 3.2.9
 
 h1. Installation
 
-<pre><code>curl -L https://raw.github.com/lucascaton/rails_templates/master/install.sh | bash -s stable</code></pre>
-
+<pre><code>curl -L https://raw.github.com/lucascaton/rails_templates/master/install.sh | bash </code></pre>
 
 h1. Usage
 
