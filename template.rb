@@ -30,7 +30,7 @@ def database_adapter
 end
 
 
-@database = prompt 'What database you want to use?', 'postgresql'
+@database = prompt 'What database you want to use?', default_answer: 'postgresql'
 @create_commits = true if yes?('Create first git commits?')
 
 remove_file 'public/index.html'
