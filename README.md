@@ -1,8 +1,10 @@
-# About
+# rails_new
+
+## About
 
 Customizable Rails template for Twitter Bootstrap, Devise and more!
 
-# Required Rails version
+### Required Rails version
 
 Rails 3.2.9
 
