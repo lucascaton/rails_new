@@ -1,6 +1,6 @@
 ## About
 
-Customizable Rails template for Twitter Bootstrap, Devise and more!
+Customizable Rails template with Twitter Bootstrap, Devise and more!
 
 ### Required Rails version
 
