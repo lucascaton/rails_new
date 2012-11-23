@@ -136,9 +136,9 @@ end
 #
 # if yes?('Install and configure Devise gem?')
 # end
-#
-# if yes?('Use brazilian portuguese locale (I18n)?')
-#   # Apagar config/locales/en.yml
-#   # Incluir config/locales*.pt-BR.yml
-#   # Atualizar config/application.rb
-# end
+
+if yes?('Use brazilian portuguese locale (I18n)?')
+  remove_file 'config/locales/en.yml'
+  # Include config/locales*.pt-BR.yml files
+  # Update config/application.rb
+end
