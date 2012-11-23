@@ -12,15 +12,9 @@ Customizable Rails template for Twitter Bootstrap, Devise and more!
 
 ## Usage
 
-    rails_new project_name # default database: postgresql
+    rails_new project_name
 
 After that, you'll answer some questions about what you want to use (Twitter Bootstrap, Devise, etc).
-
-## Customization
-
-You can also customize the default Rails options:
-
-    rails_new project_name -d mysql # check all options using `rails new --help`
 
 ## Contributing
 
