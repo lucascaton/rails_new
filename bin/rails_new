@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+#
+# rails_new
+# Created by Lucas Caton at 2012, november 23
+#
+
+app_name = 'teste' # Pegar via parametro
+system "rails new #{app_name} --skip-bundle --skip-test-unit -d postgresql -m https://raw.github.com/lucascaton/rails_new/master/template.rb"
