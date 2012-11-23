@@ -1,4 +1,4 @@
-def yes_wizard?(question)
+def yes?(question)
   answer = ask "     \e[1m\e[32mpromp".rjust(10) + "  \e[0m#{question} \e[33m(y/n)\e[0m"
   case answer.downcase
   when 'yes', 'y'
@@ -6,18 +6,32 @@ def yes_wizard?(question)
   when 'no', 'n'
     false
   else
-    yes_wizard?(question)
+    yes?(question)
   end
 end
 
-if yes_wizard?('Create first commits?')
-  @create_commits = true
+def prompt(question, options)
+  answer = ask("     \e[1m\e[32mpromp".rjust(10) + "  \e[0m#{question} \e[33m[#{options[:default_answer]}]\e[0m").strip
+  answer.present? ? answer : options[:default_answer]
 end
 
 def rewrite_file(file_name, content)
   system "rm #{file_name} && > #{file_name}"
   append_to_file(file_name, content)
 end
+
+def database_adapter
+  case @database
+  when 'postgresql' then 'pg'
+  when 'postgres' then 'pg'
+  when 'sqlite' then 'sqlite3'
+  else @database
+  end
+end
+
+
+@database = prompt 'What database you want to use?', 'postgresql'
+@create_commits = true if yes?('Create first git commits?')
 
 remove_file 'public/index.html'
 remove_file 'app/assets/images/rails.png'
@@ -28,7 +42,7 @@ ruby '1.9.3'
 
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'pg'
+gem '#{database_adapter}'
 gem 'rails', '3.2.9'
 
 group :development do
@@ -117,13 +131,13 @@ if @create_commits
   system "git commit -am 'Initial Rails directory structure'"
 end
 
-# if yes_wizard?('Install and configure Twitter Bootstrap Rails gem?')
+# if yes?('Install and configure Twitter Bootstrap Rails gem?')
 # end
 #
-# if yes_wizard?('Install and configure Devise gem?')
+# if yes?('Install and configure Devise gem?')
 # end
 #
-# if yes_wizard?('Use brazilian portuguese locale (I18n)?')
+# if yes?('Use brazilian portuguese locale (I18n)?')
 #   # Apagar config/locales/en.yml
 #   # Incluir config/locales*.pt-BR.yml
 #   # Atualizar config/application.rb
