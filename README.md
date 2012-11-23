@@ -1,4 +1,4 @@
-## bout
+## About
 
 Customizable Rails template for Twitter Bootstrap, Devise and more!
 
