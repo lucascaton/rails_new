@@ -5,3 +5,7 @@ Session.vim
 # Ignore files from Operating System
 *~
 .DS_Store
+
+# Other files
+*.gem
+.bundle
