@@ -22,9 +22,9 @@ end
 
 def database_adapter
   case @database
-  when 'postgresql' then 'pg'
-  when 'postgres' then 'pg'
-  when 'sqlite' then 'sqlite3'
+  when 'postgresql', 'postgres', 'psql' then 'pg'
+  when 'mysql'                          then 'mysql2'
+  when 'sqlite'                         then 'sqlite3'
   else @database
   end
 end
