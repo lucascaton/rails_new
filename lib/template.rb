@@ -15,12 +15,15 @@ def prompt(question, options)
   answer.present? ? answer : options[:default_answer]
 end
 
-def rewrite_file(file_name, content)
-  system "rm #{file_name} && > #{file_name}"
-  append_to_file(file_name, content)
+def rewrite_file(file, content)
+  system "rm #{file} && > #{file}"
+  append_to_file(file, content)
+  system "sed '/^$/N;/^\\n$/D' #{file} > sed_output"
+  system "mv sed_output #{file}"
 end
 
 def commit(description)
+  system 'git add .'
   system 'git add --update .'
   system "git commit -am '#{description}'"
 end
@@ -51,7 +54,7 @@ rewrite_file 'Gemfile', %Q(
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-#{@haml ? "gem 'haml-rails'" : ""}
+#{@haml ? "gem 'haml-rails'" : ''}
 gem 'jquery-rails'
 gem '#{database_adapter}'
 gem 'rails', '3.2.9'
@@ -144,5 +147,5 @@ if @pt_br_localees
   remove_file 'config/locales/en.yml'
   # Include config/locales*.pt-BR.yml files
   # Update config/application.rb
-  commit 'Including pt-br locales'
+  commit 'Including pt-br locales' if @create_commits
 end
