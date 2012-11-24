@@ -20,6 +20,11 @@ def rewrite_file(file_name, content)
   append_to_file(file_name, content)
 end
 
+def commit(description)
+  system 'git add --update .'
+  system "git commit -am '#{description}'"
+end
+
 def database_adapter
   case @database
   when 'postgresql', 'postgres', 'psql' then 'pg'
@@ -31,7 +36,13 @@ end
 
 
 @database = prompt 'What database you want to use?', default_answer: 'postgresql'
-@create_commits = true if yes?('Create first git commits?')
+@create_commits = yes?('Create first git commits?')
+@static_pages = yes?('Create static pages?')
+@haml = yes?('Use HAML?')
+@pt_br_localees = yes?('Use brazilian portuguese locale (I18n)?')
+# @twitter_bootstrap = yes?('Install and configure Twitter Bootstrap Rails gem?')
+# @devise = yes?('Install and configure Devise gem?')
+
 
 remove_file 'public/index.html'
 remove_file 'app/assets/images/rails.png'
@@ -40,7 +51,7 @@ rewrite_file 'Gemfile', %Q(
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-gem 'haml-rails'
+#{@haml ? "gem 'haml-rails'" : ""}
 gem 'jquery-rails'
 gem '#{database_adapter}'
 gem 'rails', '3.2.9'
@@ -56,7 +67,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'forgery'
   gem 'poltergeist'
@@ -127,18 +137,12 @@ system 'bundle install'
 
 if @create_commits
   system 'git init'
-  system 'git add .'
-  system "git commit -am 'Initial Rails directory structure'"
+  commit 'Initial Rails directory structure'
 end
 
-# if yes?('Install and configure Twitter Bootstrap Rails gem?')
-# end
-#
-# if yes?('Install and configure Devise gem?')
-# end
-
-if yes?('Use brazilian portuguese locale (I18n)?')
+if @pt_br_localees
   remove_file 'config/locales/en.yml'
   # Include config/locales*.pt-BR.yml files
   # Update config/application.rb
+  commit 'Including pt-br locales'
 end
