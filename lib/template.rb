@@ -37,6 +37,7 @@ def database_adapter
   when 'postgresql', 'postgres', 'psql' then 'pg'
   when 'mysql'                          then 'mysql2'
   when 'sqlite'                         then 'sqlite3'
+  when 'mongo', 'mongodb'               then 'mongoid'
   else @database
   end
 end
