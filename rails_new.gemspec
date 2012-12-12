@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = RailsNew::VERSION
   gem.authors       = ['Lucas Caton']
   gem.email         = ['lucascaton@gmail.com']
-  gem.description   = %q{Customizable Rails template with Twitter Bootstrap, Devise and more!}
-  gem.summary       = %q{Customizable Rails template with Twitter Bootstrap, Devise and more!}
+  gem.description   = %q{Bootstrap for Rails projects - Customizable Rails template with Twitter Bootstrap, Devise and more!}
+  gem.summary       = %q{Bootstrap for Rails projects - Customizable Rails template with Twitter Bootstrap, Devise and more!}
   gem.homepage      = 'https://github.com/lucascaton/rails_new'
 
   gem.add_dependency 'rails', '3.2.9'
