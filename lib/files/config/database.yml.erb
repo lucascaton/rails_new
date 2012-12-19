@@ -4,8 +4,8 @@ defaults: &defaults
   <%= database_adapter == 'mysql2' ? 'reconnect: false' : '' %>
   pool: 5
   <%= database_adapter == 'sqlite3' ? 'timeout: 5000' : '' %>
-  username:
-  password:
+  <%= database_adapter != 'sqlite3' ? 'username:' : '' %>
+  <%= database_adapter != 'sqlite3' ? 'password:' : '' %>
   <%= database_adapter == 'mysql2' ? 'socket: /tmp/mysql.sock' : '' %>
 
 development:
