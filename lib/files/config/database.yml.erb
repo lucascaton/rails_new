@@ -1,0 +1,21 @@
+defaults: &defaults
+  adapter: <%= database_adapter %>
+  <%= database_encoding ? "encoding: #{database_encoding}" : '' %>
+  <%= database_adapter == 'mysql2' ? 'reconnect: false' : '' %>
+  pool: 5
+  <%= database_adapter == 'sqlite3' ? 'timeout: 5000' : '' %>
+  username:
+  password:
+  <%= database_adapter == 'mysql2' ? 'socket: /tmp/mysql.sock' : '' %>
+
+development:
+  <<: *defaults
+  <%= database_adapter == 'sqlite3' ? 'database: db/development.sqlite3' : "database: #{@app_name}_development" %>
+
+test:
+  <<: *defaults
+  <%= database_adapter == 'sqlite3' ? 'database: db/test.sqlite3' : "database: #{@app_name}_test" %>
+
+production:
+  <<: *defaults
+  <%= database_adapter == 'sqlite3' ? 'database: db/production.sqlite3' : "database: #{@app_name}" %>
