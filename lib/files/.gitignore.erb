@@ -7,10 +7,10 @@
 # Ignore bundler config
 /.bundle
 
-<% if database_adapter == 'sqlite3' %>
+<%- if database_adapter == 'sqlite3' -%>
 # Ignore the default SQLite database.
 /db/*.sqlite3
-<% end %>
+<%- end -%>
 
 # Ignore all logfiles and tempfiles
 /log/*.log

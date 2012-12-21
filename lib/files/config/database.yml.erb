@@ -1,12 +1,22 @@
 defaults: &defaults
   adapter: <%= database_adapter %>
-  <%= database_encoding ? "encoding: #{database_encoding}" : '' %>
-  <%= database_adapter == 'mysql2' ? 'reconnect: false' : '' %>
+  <%- if database_encoding -%>
+  encoding: <%= database_encoding %>
+  <%- end -%>
+  <%- if database_adapter == 'mysql2' %>
+  reconnect: false
+  <%- end -%>
   pool: 5
-  <%= database_adapter == 'sqlite3' ? 'timeout: 5000' : '' %>
-  <%= database_adapter != 'sqlite3' ? 'username:' : '' %>
-  <%= database_adapter != 'sqlite3' ? 'password:' : '' %>
-  <%= database_adapter == 'mysql2' ? 'socket: /tmp/mysql.sock' : '' %>
+  <%- if database_adapter == 'sqlite3' -%>
+  timeout: 5000
+  <%- end -%>
+  <%- if database_adapter != 'sqlite3' -%>
+  username:
+  password:
+  <%- end -%>
+  <%- if database_adapter == 'mysql2' -%>
+  socket: /tmp/mysql.sock
+  <%- end -%>
 
 development:
   <<: *defaults
