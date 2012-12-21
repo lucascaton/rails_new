@@ -25,6 +25,20 @@ describe 'files' do
       expect(read_template).to_not match(%r{gem 'haml-rails'})
     end
 
+    it 'includes twitter-bootstrap-rails gems' do
+      @twitter_bootstrap = true
+      [%r{therubyracer}, %r{less-rails}, %r{twitter-bootstrap-rails}].each do |group|
+        expect(read_template).to match(group)
+      end
+    end
+
+    it 'does not include twitter-bootstrap-rails gems' do
+      @twitter_bootstrap = false
+      [%r{therubyracer}, %r{less-rails}, %r{twitter-bootstrap-rails}].each do |group|
+        expect(read_template).to_not match(group)
+      end
+    end
+
     it 'includes database adapter gem' do
       expect(read_template).to match(%r{gem 'pg'})
     end

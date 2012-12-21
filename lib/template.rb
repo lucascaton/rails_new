@@ -50,10 +50,10 @@ end
 @database            = prompt 'What database you want to use?', default_answer: 'postgresql'
 @customized          = yes? 'Would you like to customize the template options?'
 @create_commits      = yes? 'Create first git commits?'
-# @static_pages        = yes? 'Create static pages?'
-# @haml                = yes? 'Use HAML?'
+@static_pages        = yes? 'Create static pages?'
+@haml                = yes? 'Use HAML?'
 @pt_br_locales       = yes? 'Use brazilian portuguese locale (I18n)?'
-# @twitter_bootstrap   = yes? 'Install and configure Twitter Bootstrap Rails gem?'
+@twitter_bootstrap   = yes? 'Install and configure Twitter Bootstrap Rails gem?'
 # @devise              = yes? 'Install and configure Devise gem?'
 
 
@@ -78,6 +78,14 @@ if @pt_br_locales
   commit 'Including pt-br locales' if @create_commits
 end
 
-# route "map.root :controller => 'people'"
-# rake 'db:migrate'
-# rake 'twitter boostrap rake tasks...'
+if @twitter_bootstrap
+  system 'rails generate bootstrap:install less'
+  system 'rails generate bootstrap:layout application'
+  commit 'Installing twitter bootstrap gem' if @create_commits
+end
+
+if @static_pages
+  if @twitter_bootstrap
+  else
+  end
+end

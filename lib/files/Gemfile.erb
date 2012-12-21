@@ -1,12 +1,17 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
+gem 'rails', '3.2.9'
+gem 'jquery-rails'
 <%- if @haml -%>
 gem 'haml-rails'
 <%- end -%>
-gem 'jquery-rails'
 gem '<%= database_adapter %>'
-gem 'rails', '3.2.9'
+<%- if @twitter_bootstrap -%>
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+<%- end -%>
 
 group :development do
   gem 'better_errors'
