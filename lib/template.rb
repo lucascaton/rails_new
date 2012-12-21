@@ -15,11 +15,8 @@ def prompt(question, options)
 end
 
 def apply_template(file)
-  # template "files/#{file}.erb", file, force: true
   template "#{File.dirname(__FILE__)}/files/#{file}.erb", file, force: true
-  # first sed: remove duplicated empty lines
-  # second sed: remove lines with whitespaces
-  system "cat #{file} | sed '/^$/N;/^\\n$/D' | sed '/^ *$/d' > sed_output"
+  system "sed '/^$/N;/^\\n$/D' #{file} > sed_output" # remove duplicated empty lines
   system "mv sed_output #{file}"
 end
 
