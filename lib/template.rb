@@ -39,7 +39,7 @@ end
 def database_encoding
   case database_adapter
   when 'pg'     then 'unicode'
-  when 'mysql1' then 'utf8'
+  when 'mysql2' then 'utf8'
   end
 end
 
