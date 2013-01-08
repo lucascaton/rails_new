@@ -1,31 +1,31 @@
 defaults: &defaults
-  adapter: <%= database_adapter %>
+  adapter: <%= database_yaml_adapter %>
   <%- if database_encoding -%>
   encoding: <%= database_encoding %>
   <%- end -%>
-  <%- if database_adapter == 'mysql2' %>
+  <%- if database_yaml_adapter == 'mysql2' %>
   reconnect: false
   <%- end -%>
   pool: 5
-  <%- if database_adapter == 'sqlite3' -%>
+  <%- if database_yaml_adapter == 'sqlite3' -%>
   timeout: 5000
   <%- end -%>
-  <%- if database_adapter != 'sqlite3' -%>
+  <%- if database_yaml_adapter != 'sqlite3' -%>
   username:
   password:
   <%- end -%>
-  <%- if database_adapter == 'mysql2' -%>
+  <%- if database_yaml_adapter == 'mysql2' -%>
   socket: /tmp/mysql.sock
   <%- end -%>
 
 development:
   <<: *defaults
-  <%= database_adapter == 'sqlite3' ? 'database: db/development.sqlite3' : "database: #{@app_name}_development" %>
+  <%= database_yaml_adapter == 'sqlite3' ? 'database: db/development.sqlite3' : "database: #{@app_name}_development" %>
 
 test:
   <<: *defaults
-  <%= database_adapter == 'sqlite3' ? 'database: db/test.sqlite3' : "database: #{@app_name}_test" %>
+  <%= database_yaml_adapter == 'sqlite3' ? 'database: db/test.sqlite3' : "database: #{@app_name}_test" %>
 
 production:
   <<: *defaults
-  <%= database_adapter == 'sqlite3' ? 'database: db/production.sqlite3' : "database: #{@app_name}" %>
+  <%= database_yaml_adapter == 'sqlite3' ? 'database: db/production.sqlite3' : "database: #{@app_name}" %>

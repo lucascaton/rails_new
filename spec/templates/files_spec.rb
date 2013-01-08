@@ -66,7 +66,7 @@ describe 'files' do
 
   describe 'config/database.yml' do
     before do
-      stub!(:database_adapter)
+      stub!(:database_yaml_adapter)
       stub!(:database_encoding)
     end
 
@@ -83,8 +83,8 @@ describe 'files' do
     end
 
     it 'includes the database adapter key' do
-      stub!(:database_adapter).and_return('pg')
-      expect(read_template).to match(%r{adapter: pg})
+      stub!(:database_yaml_adapter).and_return('postgresql')
+      expect(read_template).to match(%r{adapter: postgresql})
     end
 
     it 'includes the database encoding key' do
@@ -98,58 +98,58 @@ describe 'files' do
     end
 
     it 'includes the reconnect key' do
-      stub!(:database_adapter).and_return('mysql2')
+      stub!(:database_yaml_adapter).and_return('mysql2')
       expect(read_template).to match(%r{reconnect: false})
     end
 
     it 'does not include the reconnect key' do
-      stub!(:database_adapter).and_return('pg')
+      stub!(:database_yaml_adapter).and_return('postgresql')
       expect(read_template).to_not match(%r{reconnect:})
     end
 
     it 'includes the timeout key' do
-      stub!(:database_adapter).and_return('sqlite3')
+      stub!(:database_yaml_adapter).and_return('sqlite3')
       expect(read_template).to match(%r{timeout: 5000})
     end
 
     it 'does not include the timeout key' do
-      stub!(:database_adapter).and_return('pg')
+      stub!(:database_yaml_adapter).and_return('postgresql')
       expect(read_template).to_not match(%r{timeout:})
     end
 
     it 'has the username and password keys' do
-      stub!(:database_adapter).and_return('pg')
+      stub!(:database_yaml_adapter).and_return('postgresql')
       [%r{username:}, %r{password:}].each do |key|
         expect(read_template).to match(key)
       end
     end
 
     it 'has no the username and password keys' do
-      stub!(:database_adapter).and_return('sqlite3')
+      stub!(:database_yaml_adapter).and_return('sqlite3')
       [%r{username:}, %r{password:}].each do |key|
         expect(read_template).to_not match(key)
       end
     end
 
     it 'includes the socket key' do
-      stub!(:database_adapter).and_return('mysql2')
+      stub!(:database_yaml_adapter).and_return('mysql2')
       expect(read_template).to match(%r{socket: /tmp/mysql.sock})
     end
 
     it 'does not include the socket key' do
-      stub!(:database_adapter).and_return('pg')
+      stub!(:database_yaml_adapter).and_return('postgresql')
       expect(read_template).to_not match(%r{socket:})
     end
 
     it 'includes the sqlite databases' do
-      stub!(:database_adapter).and_return('sqlite3')
+      stub!(:database_yaml_adapter).and_return('sqlite3')
       [%r{database: db/development.sqlite3}, %r{database: db/test.sqlite3}, %r{database: db/production.sqlite3}].each do |database_name|
         expect(read_template).to match(database_name)
       end
     end
 
     it 'includes the databases keys' do
-      stub!(:database_adapter).and_return('pg')
+      stub!(:database_yaml_adapter).and_return('postgresql')
       @app_name = 'application_name'
       [%r{database: application_name_development}, %r{database: application_name_test}, %r{database: application_name}].each do |database_name|
         expect(read_template).to match(database_name)
