@@ -4,7 +4,7 @@ Bootstrap for Rails projects - Customizable Rails template with Twitter Bootstra
 
 ### Required Rails version
 
-3.2.9
+3.2.11
 
 ## Installation
 
@@ -26,7 +26,7 @@ After that, you'll answer some questions about what you want to use (Twitter Boo
 
 ## Licence
 
-Copyright (c) 2012 Lucas Caton
+Copyright (c) 2013 Lucas Caton
 
 MIT License
 
