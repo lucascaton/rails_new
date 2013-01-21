@@ -12,17 +12,21 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 <%- end -%>
+<%- if @pt_br_locales -%>
+gem 'rails-i18n'
+<%- end -%>
 
 group :development do
+  gem 'annotate'
   gem 'better_errors'
   gem 'thin'
 end
 
 group :development, :test do
-  gem 'pry'
-  gem 'awesome_print'
+  gem 'pry-meta'
 end
 
+<%- if @test_gems -%>
 group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
@@ -31,9 +35,9 @@ group :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
 end
+<%- end -%>
 
 group :assets do
-  # gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end

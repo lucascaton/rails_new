@@ -58,6 +58,7 @@ end
 @create_commits      = yes? 'Create first git commits?'
 @static_pages        = yes? 'Create static pages?'
 @haml                = yes? 'Use HAML?'
+@test_gems           = yes? 'Include test gems?'
 @pt_br_locales       = yes? 'Use brazilian portuguese locale (I18n)?'
 @twitter_bootstrap   = yes? 'Install and configure Twitter Bootstrap Rails gem?'
 # @devise              = yes? 'Install and configure Devise gem?'
