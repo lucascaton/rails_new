@@ -1,3 +1,6 @@
+# generate(:scaffold, "person name:string")
+# route "root to: 'people#index'"
+
 def yes?(question)
   return true unless @customized
 
