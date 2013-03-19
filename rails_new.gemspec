@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Bootstrap for Rails projects - Customizable Rails template with Twitter Bootstrap, Devise and more!}
   gem.homepage      = 'https://github.com/lucascaton/rails_new'
 
-  gem.add_dependency 'rails', '3.2.12'
+  gem.add_dependency 'rails', '3.2.13'
   gem.add_development_dependency 'rspec'
 
   gem.files         = `git ls-files`.split($/)
