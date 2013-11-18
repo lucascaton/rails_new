@@ -66,9 +66,6 @@ end
 @twitter_bootstrap   = yes? 'Install and configure Twitter Bootstrap Rails gem?'
 # @devise              = yes? 'Install and configure Devise gem?'
 
-remove_file 'public/index.html'
-remove_file 'app/assets/images/rails.png'
-
 apply_template 'Gemfile'
 apply_template '.gitignore'
 apply_template 'config/database.yml'
