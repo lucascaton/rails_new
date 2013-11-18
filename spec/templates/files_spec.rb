@@ -12,7 +12,7 @@ describe 'files' do
     end
 
     it 'has the correct Ruby version' do
-      expect(read_template).to match(%r{ruby '1.9.3'})
+      expect(read_template).to match(%r{ruby '2.0.0'})
     end
 
     it 'includes haml-rails gem' do

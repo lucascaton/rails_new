@@ -1,10 +1,10 @@
-## About
+# rails_new
 
 Bootstrap for Rails projects - Customizable Rails template with Twitter Bootstrap, Devise and more!
 
-### Required Rails version
+### Current Rails version
 
-3.2.11
+4.0.1
 
 ## Installation
 
@@ -14,7 +14,7 @@ Bootstrap for Rails projects - Customizable Rails template with Twitter Bootstra
 
     rails_new project_name
 
-After that, you'll answer some questions about what you want to use (Twitter Bootstrap, Devise, etc).
+After that, you'll answer some questions about what you want to setup (Twitter Bootstrap, Devise, etc).
 
 ## Contributing
 
