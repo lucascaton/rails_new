@@ -2,6 +2,8 @@
 
 Bootstrap for Rails projects - Customizable Rails template with Twitter Bootstrap, Devise and more!
 
+[![Gem Version](https://badge.fury.io/rb/rails_new.png)](http://badge.fury.io/rb/rails_new)
+
 ### Current Rails version
 
 4.0.1
