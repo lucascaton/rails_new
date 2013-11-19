@@ -26,7 +26,7 @@ After that, you'll answer some questions about what you want to setup (Twitter B
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## Licence
+## License
 
 Copyright (c) 2013 Lucas Caton
 
