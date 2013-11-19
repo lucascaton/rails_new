@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_new (0.0.14)
+    rails_new (0.0.15)
       rails (= 4.0.1)
 
 GEM
