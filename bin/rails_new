@@ -4,4 +4,9 @@
 # Created by Lucas Caton at 2012, November 23
 
 app_name = ARGV.first
-system "rails new #{app_name} --skip-bundle --skip-test-unit -m #{File.expand_path('../../lib/template.rb', __FILE__)}"
+if app_name
+  system "rails new #{app_name} --skip-bundle --skip-test-unit -m #{File.expand_path('../../lib/template.rb', __FILE__)}"
+else
+  puts "A application name has to be specified."
+  puts "Usage: rails_new [APP NAME]"
+end
